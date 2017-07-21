@@ -1,0 +1,58 @@
+﻿@model CourtlandDox.Models.TagDetail
+
+@{
+    ViewBag.Title = "Extracted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-xs-12 marb-20">
+    <h2>Extracted Data</h2>
+
+    <div>
+        <h4>TagDetail</h4>
+        <hr />
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.DisplayNameFor(model => model.FileName) :
+                </div>
+                <div class="col-md-9">
+                    @Html.DisplayFor(model => model.FileName)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.DisplayNameFor(model => model.Bank) :
+                </div>
+                <div class="col-md-9">
+                    @Html.DisplayFor(model => model.Bank)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    @Html.DisplayNameFor(model => model.NoticeType) :
+                </div>
+                <div class="col-md-9">
+                    @Html.DisplayFor(model => model.NoticeType)
+                </div>
+            </div>
+            @if (Model.Tags != null && Model.Tags.Count > 0)
+            {
+                for (int i = 0; i < Model.Tags.Count; i++)
+                {
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.DisplayFor(model => model.Tags[i].Name) :
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.Tags[i].Value)
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <p style="padding-top: 100px">
+        <br />
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

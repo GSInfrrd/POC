@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Infrrd | PDF Extractor</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Bootstrap -->
+    <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!--Main css-->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Caesar+Dressing|Montserrat:400,700|Open+Sans|Righteous" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+</head>
+<body data-spy="scroll" data-offset="80">
+<div id="nav" class="navbar navbar-default navbar-fixed-top menu-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/Home" class=""><img href="/Home" class="navbar-brand" src="http://www.infrrd.ai/images/infrrd-logo-main.png" style="
+                                      padding-left: 0px;
+                                      padding-right: 0px;
+                                      padding-top: 0px;
+                                      padding-bottom: 0px;
+                                  "></a>
+                </div>
+                
+            </div><!--- END COL -->
+        </div><!--- END COL -->
+    </div><!--- END CONTAINER -->
+</div>
+
+<section id="service" class="section-padding">
+    <div class="row">
+        @RenderBody()
+    </div>
+</section>
+
+<footer class="footer text-center">
+    <div class="footer-top">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 text-center">
+                <div class="widget">
+                    <h4 class="widget-title">Infrrd</h4>
+                    <address>Infrrd.ai</address>
+                    <ul class="social-list list-horizontal">
+                        <li><a href="#">Twitter</a> |</li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                    <p class="copyright clear-float">
+                        © Infrrd. All Rights Reserved. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+﻿@model CourtlandDox.Models.TagDetail
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<form method="post" asp-action="Index" asp-controller="Home" enctype="multipart/form-data">
+    <div class="col-xs-12 marb-20">
+        <div class=" text-center">
+            <h1>Cortland agent notice automation</h1>
+            <p>Upload the file in PDF format to extract the detail</p>
+            <div class="line-block">
+                <span class="bullet"><i class="fa fa-external-link"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 ">
+        <div class=" text-center">
+            <label for="file" id="fileName" class="btn btn-default">    Select file    </label>
+            <input type="file" name="file" id="file" accept=".pdf" required style="display: none" />
+        </div>
+    </div>
+    <div class="col-xs-12 ">
+        <div class=" text-center">
+            <br />
+            <input type="submit" class="btn btn-success " value="Upload" id="upload" disabled="disabled" />
+           
+            <div class="loader" style="display: none">
+                <br /><br /><br />
+                <img src="~/img/loading_apple.gif" width="100px" height="100px" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (Model.Executed)
+{
+    <div class="col-lg-offset-3 col-md-6 col-xs-12" style="color: #666; font-family: Montserrat, Georgia, 'Times New Roman', Times, serif">
+        <br /><br />
+        <h4 class="bold">Fields in the document:</h4>
+        <hr/>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-3 bold">
+                    @Html.DisplayNameFor(model => model.FileName) :
+                </div>
+                <div class="col-md-9">
+                    @Html.DisplayFor(model => model.FileName)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3 bold">
+                    @Html.DisplayNameFor(model => model.Bank) :
+                </div>
+                <div class="col-md-9">
+                    @Html.DisplayFor(model => model.Bank)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3 bold">
+                    @Html.DisplayNameFor(model => model.NoticeType) :
+                </div>
+                <div class="col-md-9">
+                    @Html.DisplayFor(model => model.NoticeType)
+                </div>
+            </div>
+            @if (Model.Tags != null && Model.Tags.Count > 0)
+            {
+                for (int i = 0; i < Model.Tags.Count; i++)
+                {
+                    <div class="form-group">
+                        <div class="col-md-3 bold">
+                            @Html.DisplayFor(model => model.Tags[i].Name) :
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.Tags[i].Value)
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+<script>
+    $("input:file").change(function (e) {
+        var files = $(this).length;
+        if (files > 0) {
+            $("#fileName").html("File selected: " + e.target.files[0].name);
+            $("#fileName").attr("style", "width:auto");
+            $("#upload").removeAttr("disabled");
+        } else {
+            $("#upload").attr("disabled", "disabled");
+            $("#fileName").removeAttr("style");
+
+        }
+    });
+    $("#upload").click(function() {
+        $(".loader").removeAttr("style");
+    });
+</script>
