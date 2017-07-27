@@ -1,0 +1,106 @@
+
+{
+        "_id" : ObjectId("5965c9fe658e56b1a8da3e50"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Invoice number",
+        "NameExpression" : "Tax.Invoice",
+        "ValueExpression" : "\\b\\d{8,11}\\b"
+}
+{
+        "_id" : ObjectId("5965ce03658e56b1a8da4102"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Invoice number",
+        "NameExpression" : "Invoice.#",
+        "ValueExpression" : "\\b\\d{8,11}\\b"
+}
+{
+        "_id" : ObjectId("5965eca1658e56b1a8da4f21"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "GST",
+        "NameExpression" : "gst.Amount",
+        "ValueExpression" : "\\$?\\d{1,}\\.\\d{2}\\b"
+}
+{
+        "_id" : ObjectId("5965ed07658e56b1a8da4f88"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "GST",
+        "NameExpression" : "gst.Total",
+        "ValueExpression" : "\\$?\\d{1,}\\.\\d{2}\\b"
+}
+{
+        "_id" : ObjectId("5965ed28658e56b1a8da4fb6"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "GST",
+        "NameExpression" : "gst.Payable",
+        "ValueExpression" : "\\$?\\d{1,}\\.\\d{2}\\b"
+}
+{
+        "_id" : ObjectId("5965edf5658e56b1a8da5054"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "GST",
+        "NameExpression" : "gst\\s*:",
+        "ValueExpression" : "\\$?\\d{1,}\\.\\d{2}\\b"
+}
+{
+        "_id" : ObjectId("5965ee8c658e56b1a8da50eb"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "GST",
+        "NameExpression" : "gst\\s*\\$",
+        "ValueExpression" : "\\$?\\d{1,}\\.\\d{2}\\b"
+}
+{
+        "_id" : ObjectId("59660cde658e56b1a8da5d18"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Order Number",
+        "NameExpression" : "purchase.order|order.no.|order.reference",
+        "ValueExpression" : "\\b\\d{8,11}\\b"
+}
+{
+        "_id" : ObjectId("596613ef658e56b1a8da63b0"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Terms",
+        "NameExpression" : "Terms:?",
+        "ValueExpression" : "[a-zA-Z0-9% .-]*\\s\\s"
+}
+{
+        "_id" : ObjectId("5978592e9dfee4e7c02127f3"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "ABN",
+        "NameExpression" : "A.?B.?N",
+        "ValueExpression" : "\\d{2}.\\d{3}.\\d{3}.\\d{3}"
+}
+{
+        "_id" : ObjectId("597862829dfee4e7c0212b9d"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "BSB",
+        "NameExpression" : "BSB",
+        "ValueExpression" : "\\d{3}.?\\d{3}"
+}
+{
+        "_id" : ObjectId("59786a1b9dfee4e7c0212ec0"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Account",
+        "NameExpression" : "Account:",
+        "ValueExpression" : "\\d{3,5}.?\\d{3,5}"
+}
+{
+        "_id" : ObjectId("59786a689dfee4e7c0212ee2"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Account",
+        "NameExpression" : "ACC:",
+        "ValueExpression" : "\\d{3,5}.?\\d{3,5}"
+}
+{
+        "_id" : ObjectId("59786a919dfee4e7c0212efc"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Account",
+        "NameExpression" : "ACC#",
+        "ValueExpression" : "\\d{3,5}.?\\d{3,5}"
+}
+{
+        "_id" : ObjectId("59786ab89dfee4e7c0212f12"),
+        "DocumentType" : "NoticeType",
+        "NameField" : "Account",
+        "NameExpression" : "A\\/C",
+        "ValueExpression" : "\\d{3,5}.?\\d{3,5}"
+}
